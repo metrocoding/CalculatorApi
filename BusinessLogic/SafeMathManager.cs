@@ -63,7 +63,7 @@ public class SafeMathManager : ISafeMathManager
         }
 
         // result
-        var division = (float)(calculateDto.Number1 * calculateDto.Number2)!;
+        var division = (float)(calculateDto.Number1 / calculateDto.Number2)!;
         return new ServiceResult<float> { Success = true, Result = division };
     }
 }
