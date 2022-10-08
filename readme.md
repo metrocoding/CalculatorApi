@@ -5,7 +5,6 @@
 ```
 docker-compose up -d
 ```
-*In order to test they run properly visit these Urls:*
 - ElasticSearch: http://localhost:9200
 - Kibana: http://localhost:5601
 
