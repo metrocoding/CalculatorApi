@@ -55,7 +55,12 @@ public class SafeMathManager : ISafeMathManager
     public ServiceResult<float> GetDivision(CalculateDto calculateDto)
     {
         // validate
-        var validators = new List<IMathValidator> { new NullValidator() };
+        // we could add IsPositiveValidator
+        var validators = new List<IMathValidator>
+        {
+            new NullValidator(), 
+            // new IsPositiveValidator()
+        };
         foreach (var validator in validators)
         {
             var (validated, message) = validator.Validate(calculateDto);
