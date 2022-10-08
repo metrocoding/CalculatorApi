@@ -18,32 +18,32 @@ public class CalculateController : ControllerBase
     [HttpPost("addition")]
     public IActionResult Addition(CalculateDto calculateDto)
     {
-        var result = _safeMath.GetAddition(calculateDto);
-        if (!result.Success) BadRequest(result);
-        return Ok(result);
+        var response = _safeMath.GetAddition(calculateDto);
+        if (!response.Success) BadRequest(response);
+        return Ok(response.Result);
     }
 
     [HttpPost("subtraction")]
     public IActionResult Subtraction(CalculateDto calculateDto)
     {
-        var result = _safeMath.GetSubtraction(calculateDto);
-        if (!result.Success) BadRequest(result);
-        return Ok(result);
+        var response = _safeMath.GetSubtraction(calculateDto);
+        if (!response.Success) BadRequest(response);
+        return Ok(response.Result);
     }
 
     [HttpPost("multiplication")]
     public IActionResult Multiplication(CalculateDto calculateDto)
     {
-        var result = _safeMath.GetMultiplication(calculateDto);
-        if (!result.Success) BadRequest(result);
-        return Ok(result);
+        var response = _safeMath.GetMultiplication(calculateDto);
+        if (!response.Success) BadRequest(response);
+        return Ok(response.Result);
     }
 
     [HttpPost("division")]
     public IActionResult Division(CalculateDto calculateDto)
     {
-        var result = _safeMath.GetDivision(calculateDto);
-        if (!result.Success) BadRequest(result);
-        return Ok(result);
+        var response = _safeMath.GetDivision(calculateDto);
+        if (!response.Success) BadRequest(response);
+        return Ok(response.Result);
     }
 }
