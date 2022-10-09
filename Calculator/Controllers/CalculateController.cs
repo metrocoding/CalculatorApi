@@ -20,7 +20,7 @@ public class CalculateController : ControllerBase
     {
         var response = _safeMath.GetAddition(calculateDto);
         if (!response.Success) BadRequest(response);
-        return Ok(response.Result);
+        return Ok(response);
     }
 
     [HttpGet("subtraction")]
@@ -28,7 +28,7 @@ public class CalculateController : ControllerBase
     {
         var response = _safeMath.GetSubtraction(calculateDto);
         if (!response.Success) BadRequest(response);
-        return Ok(response.Result);
+        return Ok(response);
     }
 
     [HttpGet("multiplication")]
@@ -36,7 +36,7 @@ public class CalculateController : ControllerBase
     {
         var response = _safeMath.GetMultiplication(calculateDto);
         if (!response.Success) BadRequest(response);
-        return Ok(response.Result);
+        return Ok(response);
     }
 
     [HttpGet("division")]
@@ -44,6 +44,6 @@ public class CalculateController : ControllerBase
     {
         var response = _safeMath.GetDivision(calculateDto);
         if (!response.Success) BadRequest(response);
-        return Ok(response.Result);
+        return Ok(response);
     }
 }
