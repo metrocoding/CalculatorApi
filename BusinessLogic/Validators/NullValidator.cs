@@ -4,13 +4,11 @@ namespace BusinessLogic.Validators;
 
 public class NullValidator : IMathValidator
 {
-    public (bool validated, string message) Validate(CalculateDto calculateDto)
+    public (bool validated, string message) Validate(float? num1, float? num2)
     {
-        if (calculateDto == null)
-            return (false, "numbers are not provided");
-        if (calculateDto.Number1 == null)
+        if (num1 == null)
             return (false, "first number is null");
-        if (calculateDto.Number2 == null)
+        if (num2 == null)
             return (false, "second number is null");
 
         return (true, "");

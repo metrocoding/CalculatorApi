@@ -13,7 +13,7 @@ public class SafeMathManager : ISafeMathManager
         var validators = new List<IMathValidator> { new NullValidator() };
         foreach (var validator in validators)
         {
-            var (validated, message) = validator.Validate(calculateDto);
+            var (validated, message) = validator.Validate(calculateDto.Number1, calculateDto.Number2);
             if (!validated) return new ServiceResult<float> { Success = false, Message = message };
         }
 
@@ -28,7 +28,7 @@ public class SafeMathManager : ISafeMathManager
         var validators = new List<IMathValidator> { new NullValidator() };
         foreach (var validator in validators)
         {
-            var (validated, message) = validator.Validate(calculateDto);
+            var (validated, message) = validator.Validate(calculateDto.Number1, calculateDto.Number2);
             if (!validated) return new ServiceResult<float> { Success = false, Message = message };
         }
 
@@ -43,7 +43,7 @@ public class SafeMathManager : ISafeMathManager
         var validators = new List<IMathValidator> { new NullValidator() };
         foreach (var validator in validators)
         {
-            var (validated, message) = validator.Validate(calculateDto);
+            var (validated, message) = validator.Validate(calculateDto.Number1, calculateDto.Number2);
             if (!validated) return new ServiceResult<float> { Success = false, Message = message };
         }
 
@@ -58,12 +58,12 @@ public class SafeMathManager : ISafeMathManager
         // we could add IsPositiveValidator
         var validators = new List<IMathValidator>
         {
-            new NullValidator(), 
+            new NullValidator(),
             // new IsPositiveValidator()
         };
         foreach (var validator in validators)
         {
-            var (validated, message) = validator.Validate(calculateDto);
+            var (validated, message) = validator.Validate(calculateDto.Number1, calculateDto.Number2);
             if (!validated) return new ServiceResult<float> { Success = false, Message = message };
         }
 

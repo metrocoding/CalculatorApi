@@ -1,16 +1,11 @@
-using System;
-using ApiModels;
-
 namespace BusinessLogic.Validators;
 
 public class IsPositiveValidator : IMathValidator
 {
-    public (bool validated, string message) Validate(CalculateDto calculateDto)
+    public (bool validated, string message) Validate(float? num1, float? num2)
     {
-        if (calculateDto.Number1<0)
-            return (false, "number 1 is not positive");
-        if (calculateDto.Number2<0)
-            return (false, "number 2 is not positive");
+        if (num1 < 0) return (false, "number 1 is not positive");
+        if (num2 < 0) return (false, "number 2 is not positive");
         return (true, "");
     }
 }
