@@ -1,7 +1,6 @@
 using BusinessLogic;
 using Calculator.Middlewares;
 using Calculator.Providers;
-using Microsoft.OpenApi.Models;
 using Serilog;
 
 var builder = WebApplication.CreateBuilder(args);
