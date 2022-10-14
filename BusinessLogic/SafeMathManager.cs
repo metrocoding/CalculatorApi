@@ -59,6 +59,7 @@ public class SafeMathManager : ISafeMathManager
         var validators = new List<IMathValidator>
         {
             new NullValidator(),
+            new DivideByZeroValidator()
             // new IsPositiveValidator()
         };
         foreach (var validator in validators)
